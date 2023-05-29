@@ -58,8 +58,10 @@ function Header({}: Props) {
         transition={{
           duration: 1.5,
         }}
+
         className="flex flex-row items-center cursor-pointer"
       >
+        <div className="cursor-pointer hover:scale-125 duration-150">
         <SocialIcon
           className="cursor-pointer "
           network="email"
@@ -67,7 +69,9 @@ function Header({}: Props) {
           bgColor="transparent"
           
         />
-        <p className="uppercase hidden md:inline-flex">Contact Me</p>
+        <p className="uppercase hidden md:inline-flex text-gray-400">Contact Me</p>
+        </div>
+
       </motion.div>
     </header>
   );
