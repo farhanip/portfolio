@@ -1,14 +1,15 @@
 import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 function Hero({}: Props) {
   const [text] = useTypewriter({
     words: [
-      "Hi, I'm Farhan Hanif Saefuddin",
-      "Student at Universitas Indonesia",
+      "Hi, I'm Hanip",
+      "Student at CSUI",
       "Guy who loves coding",
     ],
     loop: true,
@@ -16,14 +17,23 @@ function Hero({}: Props) {
   });
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShtUSh7vECWRvnT0EjApvfm7hprTzXzBGHfGN8IIo&s"
+      <motion.img
+        src="https://drive.google.com/uc?export=view&id=12ddfWIaiY01hQuokv_nrmlWEypO-8pOm"
         alt=""
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1.5,
+        }}
       />
       <div>
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
-          Software Engineer
+        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[10px]">
+          Aspiring Software Engineer
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
@@ -40,7 +50,7 @@ function Hero({}: Props) {
         <Link href="#skills">
           <button className="heroButton">Skills</button>
         </Link>
-        <Link href="#prjects">
+        <Link href="#projects">
           <button className="heroButton">Projects</button>
         </Link>
       </div>
